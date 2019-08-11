@@ -4,18 +4,11 @@ import time
 from bs4 import BeautifulSoup
 
 
-url = "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=biological-sciences"
-response = requests.get(url)
-# print(response)
-
-
-soup = BeautifulSoup(response.text, "html.parser")
-
-a_tags = soup.findAll('a')
-# print(type(soup))
-
-# for link in soup.find_all('a'):
-#     print(link.get('href'))
+nature_urls = ["https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=biological-sciences",
+               "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=scientific-community-and-society",
+               "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=earth-and-environmental-sciences",
+               "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=health-sciences",
+               "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=physical-sciences"]
 
 
 def removeNoText(lst):
@@ -26,17 +19,26 @@ def removeNoText(lst):
     return arr
 
 
-textOnly = removeNoText(a_tags)
+def filter(soup):
+    a_tags = soup.findAll('a')
+    all_articles = removeNoText(a_tags)
+    titles, links = [], []
+    for article in all_articles:
+        if (len(article.getText()) > 85 and article.getText().startswith("Rights") == False):
+            titles.append(article.getText().strip())
+            if (("nature.com" in article['href']) == False):
+                links.append("http://www.nature.com" + article['href'])
+            else:
+                links.append(article['href'])
+    return titles, links
 
-for i in range(0, len(textOnly)):
-    if (len(textOnly[i].getText()) > 85):
-        print(textOnly[i].getText())
-        print(textOnly[i].get('a'))
-        print("-----------------------------------------------------------")
 
-
-# <a data-track = "click" data-track-action = "search result" data-track-label = "rank 0"
-# href = "/articles/s41598-019-48098-0" itemprop = "url" >
-#                 Manipulating the visibility of barriers to improve spatial
-#                 navigation efficiency and cognitive mapping
-#             </a>
+for url in nature_urls:
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+    titles, links = filter(soup)
+    # TO PRINT:
+#     for title in titles:
+#         print(title)
+#     for link in links:
+#         print(links)
