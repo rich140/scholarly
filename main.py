@@ -2,7 +2,9 @@ import requests
 import urllib.request
 import time
 from bs4 import BeautifulSoup
+from flask import Flask
 
+app = Flask(__name__)
 
 nature_urls = ["https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=biological-sciences",
                "https://www.nature.com/search?order=date_desc&article_type=research%2Creviews%2Cprotocols&subject=scientific-community-and-society",
@@ -39,7 +41,14 @@ for url in nature_urls:
     titles, links = filter(soup)
 
     # TO PRINT:
-    for title in titles:
-        print(title)
+#     for title in titles:
+#         print(title)
 #     for link in links:
 #         print(links)
+
+# @app.route("/")
+# def hello():
+#     return "Hello, World!"
+
+if __name__ == "__main__":
+    app.run()
