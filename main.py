@@ -37,8 +37,9 @@ for url in nature_urls:
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     titles, links = filter(soup)
+
     # TO PRINT:
-#     for title in titles:
-#         print(title)
+    for title in titles:
+        print(title)
 #     for link in links:
 #         print(links)
