@@ -22,7 +22,6 @@
 </head>
 
 <body>
-    <p> i am {{ author }}</p>
 
     <div class="container">
         <div class="row">
@@ -59,10 +58,16 @@
             </div>
             <div class="col-md-7" , id="col1" , style="background-color: white">
                 <h1>HEADLINES</h1>
-                <p id="text">
-                    {% for n in list %}
-                    <li>{{ n }}</li>
-                    {% endfor %}</p>
+
+                <table id="data">
+                    {% for key, value in data.items() %}
+                    <tr>
+                        Key: {{key}}
+                    </tr>
+
+                    {% endfor %}
+                </table>
+
 
 
 
@@ -71,12 +76,12 @@
 
             <div class="col-md-3" , id="col2" , style="background-color: green">
                 <h1>SAVED</h1>
-                <p>My string: {{my_string}}</p>
-                <p>Value from the list: {{my_list[3]}}</p>
+
+                <p>Value from the list: {{data[3]}}</p>
                 <p>Loop through the list:</p>
-                <p> i am {{ author }}</p>
+                <p> i am {{ data }}</p>
                 <ul>
-                    {% for n in my_list %}
+                    {% for n in data %}
                     <li>{{n}}</li>
                     {% endfor %}
                 </ul>

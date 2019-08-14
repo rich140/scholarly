@@ -24,15 +24,15 @@ def removeNoText(lst):
 def filter(soup):
     a_tags = soup.findAll('a')
     all_articles = removeNoText(a_tags)
-    titles, links = [], []
+    result = {}
     for article in all_articles:
         if (len(article.getText()) > 85 and article.getText().startswith("Rights") == False):
-            titles.append(article.getText().strip())
             if (("nature.com" in article['href']) == False):
-                links.append("http://www.nature.com" + article['href'])
+                result[article.getText().strip()] = "http://www.nature.com" + \
+                    article['href']
             else:
-                links.append(article['href'])
-    return titles, links
+                result[article.getText().strip()] = article['href']
+    return result
 
 
 def extract():
@@ -40,31 +40,17 @@ def extract():
     url = nature_urls[0]
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
-    titles, links = filter(soup)
+    return filter(soup)
 
 # TO PRINT:
+# for key, val in result.items():
+#     print(key, "=>", val)
 
-# for title in titles:
-#     print(title)
-# for link in links:
-#     print(link)
-
-
-# @app.route("/")
-# def bio_titles():
-#     return render_template('index.html', list=extract()[0])
 
 @app.route("/")
-@app.route("/templates/index.html")
-@app.route("/templates/")
-def output():
-    return render_template('index.html', author='me')
-
-
-@app.route("/templates/")
-def template_test():
-    return render_template('template.html', my_string="Wheeeee!", my_list=[0, 1, 2, 3, 4, 5])
+def info():
+    return render_template('index.html', author="Me", data=extract())
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
