@@ -29,27 +29,44 @@
             <div class="sidenav col-md-2">
 
                 <div class="logo">
-                    <a>Top Secret</a>
+                    <a onclick="home()">Top Secret</a>
+                    <script>
+                        function home() {
+                            document.getElementById('text').innerHTML = "Home Page";
+                        }
+                    </script>
                 </div>
 
-                <li><button id="category1" , onclick="myFunction()">Biological Sciences</button>
-                    <script>
-                        function myFunction() {
-                            document.getElementById("text").innerHTML = "Paragraph changed!";
-                        } </script>
-                </li>
-                <li><button id="category2" , onclick="myFunction()">Society</button>
-                    <script>
-                        function myFunction() {
-                            document.getElementById("text").innerHTML = "Paragraph changed!";
-                        } </script>
-                </li>
-                <li><button id="category3" , onclick="myFunction()">Earth?</button>
-                    <script>
-                        function myFunction() {
-                            document.getElementById("text").innerHTML = "Paragraph changed!";
-                        } </script>
-                </li>
+                <button id="category1" , onclick="bio()">Biological Sciences</button>
+                <script>
+                    function bio() {
+                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[0].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    } </script>
+
+                <button id="category2" , onclick="sci()">Scientific Community and Society</button>
+                <script>
+                    function sci() {
+                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    } </script>
+
+                <button id="category3" , onclick="earth()">Earth and Environmental Sciences</button>
+                <script>
+                    function earth() {
+                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    } </script>
+
+                <button id="category4" , onclick="health()">Health Sciences</button>
+                <script>
+                    function health() {
+                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    } </script>
+
+                <button id="category5" , onclick="physical()">Physical Sciences</button>
+                <script>
+                    function physical() {
+                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    } </script>
+
 
 
 
@@ -57,20 +74,18 @@
             </div>
             <div class="col-md-7" , id="col1" , style="background-color: white">
                 <h1>HEADLINES</h1>
-
-                <table id="data" , border=1>
-
-                    {% for key, value in data[1].items() %}
-                    <tr>
-                        <td>
-                            {{key}} <a href={{value}}, target="_blank">Link</a>
-                        </td>
-                    </tr>
-
-                    {% endfor %}
-                </table>
-
-
+                <div id="text">
+                    <!-- <table id="data" , border=1>
+                        {% for key, value in data[1].items() %}
+                        <tr>
+                            <td>
+                                {{key}} <a href={{value}}, target="_blank">Link</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table> -->
+                    Home Page
+                </div>
 
 
             </div>

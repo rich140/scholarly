@@ -5,6 +5,9 @@ body {
     font-family: 'Muli', Arial, sans-serif;
 }
 
+.logo {
+    cursor: pointer;
+}
 
 .sidenav {
     height: 100%;
