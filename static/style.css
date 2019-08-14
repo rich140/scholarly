@@ -1,0 +1,47 @@
+
+body {
+    font-size: 14px;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+#headlines {
+    background-color: red;
+}
+
+.sidenav {
+    background-color: rgb(255, 124, 124);
+}
+
+.button {
+    display:block;
+    border: 1px solid green;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: red;
+}
+
+#cat1 {
+    background-color:red; 
+  color: white; 
+  border: 2px solid #4CAF50;
+}
+
+#cat1:hover {
+    background-color: white;
+    color: black;
+}
+
+#saved{
+    background-color: green;
+  }
+
+
+
+
+
