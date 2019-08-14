@@ -3,39 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    {% block styles %}
-    {{super()}}
-    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
-    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 
 
-
-    <!-- BOOTSTRAP -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script>
 
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
 
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
 
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-    </script>
 
 
     <title>Hello Top Secret Project</title>
@@ -43,60 +21,60 @@
 
 <body>
 
-    <div class="container">
-        <div class="row">
 
-            <div class="sidenav col-md-2">
+    <div class="sidebar-wrapper">
 
-                <div class="logo">
-                    <a onclick="home()">Home</a>
-                    <script>
-                        function home() {
-                            document.getElementById('text').innerHTML = "Home Page";
-                        }
-                    </script>
-                </div>
+        <div class="logo">
+            <button onclick="home()">Home</button>
+            <script>
+                function home() {
+                    document.getElementById('text').innerHTML = "Home Page";
+                }
+            </script>
+        </div>
 
-                <button id="cat1" , onclick="bio()">Biological Sciences</button>
-                <script>
-                    function bio() {
-                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[0].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                    } 
-                </script>
+        <div class="sidebar">
+            <button id="cat1" , onclick="bio()">Biological Sciences</button>
+            <script>
+                function bio() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[0].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } 
+            </script>
 
-                <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
-                <script>
-                    function sci() {
-                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                    } </script>
+            <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
+            <script>
+                function sci() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
 
-                <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
-                <script>
-                    function earth() {
-                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                    } </script>
+            <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
+            <script>
+                function earth() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
 
-                <button id="cat4" , onclick="health()">Health Sciences</button>
-                <script>
-                    function health() {
-                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                    } </script>
+            <button id="cat4" , onclick="health()">Health Sciences</button>
+            <script>
+                function health() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
 
-                <button id="cat5" , onclick="physical()">Physical Sciences</button>
-                <script>
-                    function physical() {
-                        document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                    } </script>
-
-
+            <button id="cat5" , onclick="physical()">Physical Sciences</button>
+            <script>
+                function physical() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+        </div>
 
 
 
-            </div>
-            <div class="col-md-7" , id="headlines">
-                <h1>HEADLINES</h1>
-                <div id="text">
-                    <!-- <table id="data" , border=1>
+    </div>
+
+    <div class="headline-wrapper">
+        <div class="headlines">
+            <h1>HEADLINES</h1>
+            <div id="text">
+                <!-- <table id="data" , border=1>
                         {% for key, value in data[1].items() %}
                         <tr>
                             <td>
@@ -105,38 +83,22 @@
                         </tr>
                         {% endfor %}
                     </table> -->
-                    Home Page
-                </div>
-                <img id="drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
-                    ondragstart="drag(event)">
-
-
+                Home Page
             </div>
-
-
-            <div class="col-md-3" id="saved" ondrop="drop(event)" ondragover="allowDrop(event)">
-
-                <h1>SAVED</h1>
-
-                <p>asdkfnkasfhal
-                    arw
-                    r
-
-                    34
-                    234
-                    2
-                    1
-                    32
-                    13143
-                    4jsgfdk glksgl
-                </p>
-
-            </div>
+            <img id="drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
+                ondragstart="drag(event)">
         </div>
 
 
+        <div class="saved" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+            <h1>SAVED</h1>
+        </div>
     </div>
+
+
+
+
 
 
 </body>

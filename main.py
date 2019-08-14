@@ -48,7 +48,7 @@ def extract():
 #     print(key, "=>", val)
 
 
-@app.route("/")
+@app.route('/')
 def info():
     return render_template('index.html', author="Me", data=extract())
 

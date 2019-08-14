@@ -4,41 +4,41 @@ body {
     font-family: 'Muli', Arial, sans-serif;
 }
 
+
+.sidebar-wrapper {
+    width: 100%;
+    overflow:  hidden;
+}
+
 .logo {
+    width: 300px;
+    float: left;
     cursor: pointer;
 }
 
-#headlines {
-    background-color: red;
-}
-
-.sidenav {
-    background-color: rgb(255, 124, 124);
+.sidebar {
+    margin-left: 320px;
 }
 
 .button {
-    display:block;
-    border: 1px solid green;
+    border: 1px solid grey;
     text-align: center;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: red;
 }
 
-#cat1 {
-    background-color:red; 
-  color: white; 
-  border: 2px solid #4CAF50;
+.headlines-wrapper {
+    width: 100%;
+    overflow: hidden;
 }
 
-#cat1:hover {
-    background-color: white;
-    color: black;
+.headlines {
+    background-color: rgb(255, 232, 232);
+    width: 800px;
+    float: left;
 }
 
-#saved{
-    background-color: green;
+.saved{
+    margin-left: 820px;
+    background-color: coral;
   }
 
 
