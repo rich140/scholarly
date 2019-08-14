@@ -1,14 +1,8 @@
-.column {
-    float: left;
 
-
-}
-
-#col1 {
-
-}
-#col2 {
-
+body {
+    color: #66615b;
+    font-size: 14px;
+    font-family: 'Muli', Arial, sans-serif;
 }
 
 
@@ -34,6 +28,8 @@
 .sidenav a:hover {
     color: #f1f1f1;
 }
+
+
 
 
 

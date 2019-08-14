@@ -2,7 +2,7 @@ import requests
 import urllib.request
 import time
 from bs4 import BeautifulSoup
-from flask import Flask
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
@@ -35,20 +35,36 @@ def filter(soup):
     return titles, links
 
 
-for url in nature_urls:
+def extract():
+    # for url in nature_urls:
+    url = nature_urls[0]
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     titles, links = filter(soup)
 
-    # TO PRINT:
-#     for title in titles:
-#         print(title)
-#     for link in links:
-#         print(links)
+# TO PRINT:
+
+# for title in titles:
+#     print(title)
+# for link in links:
+#     print(link)
+
 
 # @app.route("/")
-# def hello():
-#     return "Hello, World!"
+# def bio_titles():
+#     return render_template('index.html', list=extract()[0])
 
-if __name__ == "__main__":
-    app.run()
+@app.route("/")
+@app.route("/templates/index.html")
+@app.route("/templates/")
+def output():
+    return render_template('index.html', author='me')
+
+
+@app.route("/templates/")
+def template_test():
+    return render_template('template.html', my_string="Wheeeee!", my_list=[0, 1, 2, 3, 4, 5])
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,5 +1,6 @@
 function myFunction() {
 
-    document.getElementById("text").innerHTML= "abc";
+    document.getElementById("text").innerHTML = "Paragraph changed!";
 
 }
+
