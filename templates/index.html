@@ -32,26 +32,25 @@
                     <a>Top Secret</a>
                 </div>
 
-                <ul>
-                    <li><button id="category1" , onclick="myFunction()">Biological Sciences</button>
-                        <script>
-                            function myFunction() {
-                                document.getElementById("text").innerHTML = "Paragraph changed!";
-                            } </script>
-                    </li>
-                    <li><button id="category2" , onclick="myFunction()">Society</button>
-                        <script>
-                            function myFunction() {
-                                document.getElementById("text").innerHTML = "Paragraph changed!";
-                            } </script>
-                    </li>
-                    <li><button id="category3" , onclick="myFunction()">Earth?</button>
-                        <script>
-                            function myFunction() {
-                                document.getElementById("text").innerHTML = "Paragraph changed!";
-                            } </script>
-                    </li>
-                </ul>
+                <li><button id="category1" , onclick="myFunction()">Biological Sciences</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("text").innerHTML = "Paragraph changed!";
+                        } </script>
+                </li>
+                <li><button id="category2" , onclick="myFunction()">Society</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("text").innerHTML = "Paragraph changed!";
+                        } </script>
+                </li>
+                <li><button id="category3" , onclick="myFunction()">Earth?</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("text").innerHTML = "Paragraph changed!";
+                        } </script>
+                </li>
+
 
 
 
@@ -59,10 +58,13 @@
             <div class="col-md-7" , id="col1" , style="background-color: white">
                 <h1>HEADLINES</h1>
 
-                <table id="data">
-                    {% for key, value in data.items() %}
+                <table id="data" , border=1>
+
+                    {% for key, value in data[1].items() %}
                     <tr>
-                        Key: {{key}}
+                        <td>
+                            {{key}} <a href={{value}}, target="_blank">Link</a>
+                        </td>
                     </tr>
 
                     {% endfor %}
@@ -77,14 +79,7 @@
             <div class="col-md-3" , id="col2" , style="background-color: green">
                 <h1>SAVED</h1>
 
-                <p>Value from the list: {{data[3]}}</p>
-                <p>Loop through the list:</p>
-                <p> i am {{ data }}</p>
-                <ul>
-                    {% for n in data %}
-                    <li>{{n}}</li>
-                    {% endfor %}
-                </ul>
+
 
             </div>
         </div>

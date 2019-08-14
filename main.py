@@ -36,11 +36,12 @@ def filter(soup):
 
 
 def extract():
-    # for url in nature_urls:
-    url = nature_urls[0]
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    return filter(soup)
+    result = []
+    for url in nature_urls:
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, "html.parser")
+        result.append(filter(soup))
+    return result
 
 # TO PRINT:
 # for key, val in result.items():
