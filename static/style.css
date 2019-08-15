@@ -16,10 +16,12 @@ body {
 .sidebar-wrapper {
     width: 100%;
     overflow:  hidden;
+    margin-top: 20px;
 }
 
 .logo {
-    width: 300px;
+    padding-left: 50px;
+    width: 250px;
     float: left;
     cursor: pointer;
 }
@@ -31,10 +33,11 @@ body {
 .button {
     border: 1px solid grey;
     text-align: center;
+    font-size: 20px;
 }
 
 .headlines-wrapper {
-    height: 800px;
+    height: 100%;
     width: 100%;
     overflow: hidden;
 
@@ -49,8 +52,6 @@ body {
 
 .fill {
     cursor: pointer;
-    height: 20px;
-    width: 20px;
 }
 
 .hold {
@@ -67,7 +68,7 @@ body {
 }
 
 .saved{
-    height: 800px;
+    height: 100%;
     margin-left: 820px;
     background-color: rgb(252, 138, 97);
   }
@@ -79,6 +80,5 @@ body {
   border: solid 1px black;
   background: white;
 }
-
 
 

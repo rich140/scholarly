@@ -10,6 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
+
+
     <title>Top Secret</title>
 </head>
 
@@ -31,7 +33,7 @@
             <button id="cat1" , onclick="bio()">Biological Sciences</button>
             <script>
                 function bio() {
-                    document.getElementById("text").innerHTML = "<ul>{% for key, value in data[0].items() %} <li class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
+                    document.getElementById("text").innerHTML = "<ul>{% for key, value in data[0].items() %} <li ondragstart='drag(event)', class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
                 }
             </script>
 
@@ -66,7 +68,7 @@
 
     <div class="headlines-wrapper">
         <div class="headlines">
-            <h1>HEADLINES</h1>
+            <h1 style="text-align: center">HEADLINES</h1>
             <div id="text">
                 <!-- <table id="data" , border=1>
                         {% for key, value in data[1].items() %}
@@ -77,24 +79,40 @@
                         </tr>
                         {% endfor %}
                     </table> -->
-                Home Page
+                <h2 style='text-align: center;'>Home Page</h2>
             </div>
-            <div class="empty">
-                <img id="drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
+            <div class="empty" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
+                <div draggable='true' ondragstart="drag(event)">
+                    <p>LIST ITEM NUMBER 1</p>
+                    <img id=" drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog">
+                </div>
+            </div>
+            <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img id=" drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
                     ondragstart="drag(event)">
             </div>
+
+
         </div>
 
 
 
-        <div class="saved" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="saved">
 
-            <h1>SAVED</h1>
+            <h1 style="text-align: center">SAVED</h1>
+            <div class=" empty" ondrop='drop(event)' ondragover='allowDrop(event)'>
+            </div>
+            <div class="empty">
+                <p id='target' ondrop='drop_handler(event)' ondragover='dragover_handler(event)'>Drop Zone</p>
+            </div>
+            <div class="empty">
+                <p id='p1' draggable='true' ondragstart="dragstart_handler(event)" ondragend="dragend_handler(event)">
+                    This element is draggable</p>
+            </div>
             <div class="empty"></div>
             <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
+
+
         </div>
     </div>
 
