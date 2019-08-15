@@ -45,26 +45,9 @@ body {
 
 .headlines {
     height: 100%;
-    background-color: rgb(255, 232, 232);
+    background-color: rgb(255, 255, 255);
     width: 800px;
     float: left;
-}
-
-.fill {
-    cursor: pointer;
-}
-
-.hold {
-    border: solid #ccc 2px
-}
-
-.hovered {
-    background: #5a1b1b;
-    border-style: dashed;
-}
-
-.invisible {
-    display: none;
 }
 
 .saved{
@@ -73,12 +56,13 @@ body {
     background-color: rgb(252, 138, 97);
   }
 .empty {
-  display: inline-block;
-  height: 30px;
+  /* display: inline-block; */
+  height: 50px;
   width: 100%;
   margin-left: 10px;
-  border: solid 1px black;
-  background: white;
+  margin-right: 10px;
+  /* border: solid 1px black;
+  background: white; */
 }
 
 
