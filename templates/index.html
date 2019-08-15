@@ -88,7 +88,8 @@
                 </div>
             </div>
             <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img id=" drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
+                <img id=" drag2" src="{{ url_for('static',filename='images/pupper.jpg') }}"
+                     alt="dog" draggable="true"
                     ondragstart="drag(event)">
             </div>
 
@@ -100,7 +101,7 @@
         <div class="saved">
 
             <h1 style="text-align: center">SAVED</h1>
-            <div class=" empty" ondrop='drop(event)' ondragover='allowDrop(event)'>
+            <div class="empty" ondrop='drop(event)' ondragover='allowDrop(event)'>
             </div>
             <div class="empty">
                 <p id='target' ondrop='drop_handler(event)' ondragover='dragover_handler(event)'>Drop Zone</p>

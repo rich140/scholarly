@@ -68,8 +68,9 @@ body {
 }
 
 .saved{
+    margin-top: -20px;
     height: 100%;
-    margin-left: 820px;
+    margin-left: 810px;
     background-color: rgb(252, 138, 97);
   }
 .empty {
