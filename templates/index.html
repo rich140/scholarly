@@ -79,18 +79,36 @@
                         </tr>
                         {% endfor %}
                     </table> -->
-                <h2 style='text-align: center;'>Home Page</h2>
+                <h2 style='text-align: center'>Home Page</h2>
             </div>
-            <div class="empty" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
-                <div draggable='true' ondragstart="drag(event)">
-                    <p>LIST ITEM NUMBER 1</p>
-                    <img id=" drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog">
+            <ol>
+                <div class="empty">
+                    <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'>Redredredredredredredred</li>
                 </div>
-            </div>
-            <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img id=" drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
-                    ondragstart="drag(event)">
-            </div>
+                <div class="empty">
+                    <li id='t2' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'>YellowYellowYellow</li>
+                </div>
+                <div class="empty">
+                    <li id='t3' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'>GreenGreenGreen</li>
+                </div>
+                <div class="empty">
+                    <li id='t4' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'>BlueBLueBlueBLUELBULEULBULBUEBUEBE</li>
+                </div>
+                <div class="empty">
+                    <li id='t5' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'>PURRRRRRRRPLE!</li>
+                </div>
+            </ol>
+
 
 
         </div>
@@ -100,18 +118,33 @@
         <div class="saved">
 
             <h1 style="text-align: center">SAVED</h1>
-            <div class=" empty" ondrop='drop(event)' ondragover='allowDrop(event)'>
-            </div>
-            <div class="empty">
-                <p id='target' ondrop='drop_handler(event)' ondragover='dragover_handler(event)'>Drop Zone</p>
-            </div>
-            <div class="empty">
-                <p id='p1' draggable='true' ondragstart="dragstart_handler(event)" ondragend="dragend_handler(event)">
-                    This element is draggable</p>
-            </div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-
+            <ol>
+                <div class="empty">
+                    <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'></li>
+                </div>
+                <div class="empty">
+                    <li id='t2' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'></li>
+                </div>
+                <div class="empty">
+                    <li id='t3' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'></li>
+                </div>
+                <div class="empty">
+                    <li id='t4' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'></li>
+                </div>
+                <div class="empty">
+                    <li id='t5' draggable='true' ondragstart="dragstart_handler(event)"
+                        ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
+                        ondragover='dragover_handler(event)'></li>
+                </div>
+            </ol>
 
         </div>
     </div>

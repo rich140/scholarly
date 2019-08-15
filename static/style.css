@@ -45,7 +45,7 @@ body {
 
 .headlines {
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: lightblue;
     width: 800px;
     float: left;
 }
@@ -53,6 +53,7 @@ body {
 .saved{
     height: 100%;
     margin-left: 820px;
+    margin-top: -20px;
     background-color: rgb(252, 138, 97);
   }
 .empty {
