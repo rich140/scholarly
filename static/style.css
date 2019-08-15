@@ -1,7 +1,15 @@
+html {
+    margin:0;
+    padding:0;
+    height:100%;
+}
 
 body {
     font-size: 14px;
     font-family: 'Muli', Arial, sans-serif;
+    margin:0;
+    padding:0;
+    height:100%;
 }
 
 
@@ -26,22 +34,51 @@ body {
 }
 
 .headlines-wrapper {
+    height: 800px;
     width: 100%;
     overflow: hidden;
+
 }
 
 .headlines {
+    height: 100%;
     background-color: rgb(255, 232, 232);
     width: 800px;
     float: left;
 }
 
+.fill {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.hold {
+    border: solid #ccc 2px
+}
+
+.hovered {
+    background: #5a1b1b;
+    border-style: dashed;
+}
+
+.invisible {
+    display: none;
+}
+
 .saved{
+    height: 800px;
     margin-left: 820px;
-    background-color: coral;
+    background-color: rgb(252, 138, 97);
   }
-
-
+.empty {
+  display: inline-block;
+  height: 30px;
+  width: 100%;
+  margin-left: 10px;
+  border: solid 1px black;
+  background: white;
+}
 
 
 

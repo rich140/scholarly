@@ -6,17 +6,11 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}">
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 
-
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-
-
-
-
-    <title>Hello Top Secret Project</title>
+    <title>Top Secret</title>
 </head>
 
 <body>
@@ -37,8 +31,8 @@
             <button id="cat1" , onclick="bio()">Biological Sciences</button>
             <script>
                 function bio() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[0].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                } 
+                    document.getElementById("text").innerHTML = "<ul>{% for key, value in data[0].items() %} <li class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
+                }
             </script>
 
             <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
@@ -70,7 +64,7 @@
 
     </div>
 
-    <div class="headline-wrapper">
+    <div class="headlines-wrapper">
         <div class="headlines">
             <h1>HEADLINES</h1>
             <div id="text">
@@ -85,14 +79,22 @@
                     </table> -->
                 Home Page
             </div>
-            <img id="drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
-                ondragstart="drag(event)">
+            <div class="empty">
+                <img id="drag1" src="{{ url_for('static',filename='images/pupper.jpg') }}" alt="dog" draggable="true"
+                    ondragstart="drag(event)">
+            </div>
         </div>
+
 
 
         <div class="saved" ondrop="drop(event)" ondragover="allowDrop(event)">
 
             <h1>SAVED</h1>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
         </div>
     </div>
 
