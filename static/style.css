@@ -51,9 +51,14 @@ body {
 }
 
 .saved{
+    margin-top: -20px;
     height: 100%;
+<<<<<<< HEAD
     margin-left: 820px;
     margin-top: -20px;
+=======
+    margin-left: 810px;
+>>>>>>> 94fff629b4faf26548f18d4fa35ecb9819f55ed2
     background-color: rgb(252, 138, 97);
   }
 .empty {

@@ -87,6 +87,7 @@
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
                         ondragover='dragover_handler(event)'>Redredredredredredredred</li>
                 </div>
+<<<<<<< HEAD
                 <div class="empty">
                     <li id='t2' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
@@ -109,6 +110,14 @@
                 </div>
             </ol>
 
+=======
+            </div>
+            <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img id=" drag2" src="{{ url_for('static',filename='images/pupper.jpg') }}"
+                     alt="dog" draggable="true"
+                    ondragstart="drag(event)">
+            </div>
+>>>>>>> 94fff629b4faf26548f18d4fa35ecb9819f55ed2
 
 
         </div>
@@ -118,6 +127,7 @@
         <div class="saved">
 
             <h1 style="text-align: center">SAVED</h1>
+<<<<<<< HEAD
             <ol>
                 <div class="empty">
                     <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
@@ -145,6 +155,20 @@
                         ondragover='dragover_handler(event)'></li>
                 </div>
             </ol>
+=======
+            <div class="empty" ondrop='drop(event)' ondragover='allowDrop(event)'>
+            </div>
+            <div class="empty">
+                <p id='target' ondrop='drop_handler(event)' ondragover='dragover_handler(event)'>Drop Zone</p>
+            </div>
+            <div class="empty">
+                <p id='p1' draggable='true' ondragstart="dragstart_handler(event)" ondragend="dragend_handler(event)">
+                    This element is draggable</p>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+
+>>>>>>> 94fff629b4faf26548f18d4fa35ecb9819f55ed2
 
         </div>
     </div>
