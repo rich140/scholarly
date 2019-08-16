@@ -4,66 +4,129 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="{{ url_for('static', filename='html5sortable.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
+    <script>
+        sortable('.js-sortable-oneway', {
+            forcePlaceholderSize: true,
+            acceptFrom: false,
+            placeholderClass: 'mb1 bg-navy border border-yellow'
+        });
+        sortable('.js-sortable-oneway-receive', {
+            forcePlaceholderSize: true,
+            acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
+            placeholderClass: 'mb1 bg-navy border border-yellow',
+            customDragImage: function (draggedElement, elementOffset, event) {
+                draggedElement.style.border = "5px solid white"
+                return {
+                    element: draggedElement,
+                    posX: event.pageX - elementOffset.left,
+                    posY: event.pageY - elementOffset.top
+                }
+            }
+        });
+    </script>
+
     <title>Top Secret</title>
 </head>
 
 <body>
 
-<div class="sidebar-wrapper">
 
-    <div class="logo">
-        <button onclick="home()">Home</button>
-        <script>
-            function home() {
-                document.getElementById('text').innerHTML = "Home Page";
-            }
-        </script>
-    </div>
 
-    <div class="sidebar">
-        <button id="cat1" , onclick="bio()">Biological Sciences</button>
-        <script>
-            function bio() {
-                document.getElementById("text").innerHTML =
-                    "<ul>{% for key, value in data[0].items() %} <li ondragstart='drag(event)', class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
-            }
-        </script>
 
-        <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
-        <script>
-            function sci() {
-                document.getElementById("text").innerHTML =
-                    "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-            } </script>
+    <div class="sidebar-wrapper">
 
-        <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
-        <script>
-            function earth() {
-                document.getElementById("text").innerHTML =
-                    "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-            } </script>
+        <div class="sidebar">
+            <button id="cat1" , onclick="bio()">Biological Sciences</button>
+            <script>
+                function bio() {
+                    document.getElementById("text").innerHTML =
+                        "<ul class='ml4 js-sortable-oneway sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[0].items() %}\
+                        <li class='p1 mb1 navy bg-yellow' style = 'position: relative; z-index: 10'>\
+                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        </ul>";
+                }
 
-        <button id="cat4" , onclick="health()">Health Sciences</button>
-        <script>
-            function health() {
-                document.getElementById("text").innerHTML =
-                    "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-            } </script>
+            </script>
 
-        <button id="cat5" , onclick="physical()">Physical Sciences</button>
-        <script>
-            function physical() {
-                document.getElementById("text").innerHTML =
-                    "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-            } </script>
-    </div>
+            <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
+            <script>
+                function sci() {
+                    document.getElementById("text").innerHTML =
+                        "<table id='data', border=1>\
+                            {% for key, value in data[1].items() %} <tr> <td>\
+                            {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                            </td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
+            <script>
+                function earth() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat4" , onclick="health()">Health Sciences</button>
+            <script>
+                function health() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat5" , onclick="physical()">Physical Sciences</button>
+            <script>
+                function physical() {
+                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+        </div>
+
+        <div class="sidebar">
+            <button id="cat1" , onclick="bio()">Biological Sciences</button>
+            <script>
+                function bio() {
+                    document.getElementById("text").innerHTML =
+                        "<ul>{% for key, value in data[0].items() %} <li ondragstart='drag(event)', class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
+                }
+            </script>
+
+            <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
+            <script>
+                function sci() {
+                    document.getElementById("text").innerHTML =
+                        "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
+            <script>
+                function earth() {
+                    document.getElementById("text").innerHTML =
+                        "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat4" , onclick="health()">Health Sciences</button>
+            <script>
+                function health() {
+                    document.getElementById("text").innerHTML =
+                        "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+
+            <button id="cat5" , onclick="physical()">Physical Sciences</button>
+            <script>
+                function physical() {
+                    document.getElementById("text").innerHTML =
+                        "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                } </script>
+        </div>
 
 
     </div>
@@ -83,7 +146,7 @@
                     </table> -->
                 <h2 style='text-align: center'>Home Page</h2>
             </div>
-            <ol>
+            <!-- <ol>
                 <div class="empty">
                     <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
@@ -114,7 +177,25 @@
                         ondragover='dragover_handler(event)'>PURRRRRRRRPLE!
                     </li>
                 </div>
-            </ol>
+            </ol> -->
+            <div class="p3 clearfix bg-navy yellow">
+
+                <div class="col col-3">
+                    <ul class="ml4 js-sortable-oneway sortable list flex flex-column list-reset">
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 1</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 2</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 3</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 4</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 5</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 6</li>
+                        <li class="mb1 bg-navy ghost border border-yellow"
+                            style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">
+                            Ghost test
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
 
 
         </div>
@@ -123,7 +204,7 @@
         <div class="saved">
 
             <h1 style="text-align: center">SAVED</h1>
-            <ol>
+            <!-- <ol>
                 <div class="empty">
                     <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
@@ -149,10 +230,83 @@
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
                         ondragover='dragover_handler(event)'></li>
                 </div>
-            </ol>
+            </ol> -->
+            <div class="p3 clearfix bg-navy yellow">
+                <div class="col col-3">
+                    <ul class="ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset">
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 7</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 8</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 9</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 10</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 11</li>
+                        <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 12</li>
+                        <li class="mb1 bg-navy ghost border border-yellow"
+                            style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">
+                            Ghost test
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="p3 clearfix bg-navy yellow">
+        <div class="col col-6">
 
         </div>
+        <div class="col col-3">
+            <ul class="ml4 js-sortable-oneway sortable list flex flex-column list-reset">
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 1</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 2</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 3</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 4</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 5</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 6</li>
+                <li class="mb1 bg-navy ghost border border-yellow"
+                    style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">Ghost test
+                </li>
+            </ul>
+        </div>
+        <div class="col col-3">
+            <ul class="ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset">
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 7</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 8</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 9</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 10</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 11</li>
+                <li class="p1 mb1 navy bg-yellow" style="position: relative; z-index: 10">Item 12</li>
+                <li class="mb1 bg-navy ghost border border-yellow"
+                    style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">Ghost test
+                </li>
+            </ul>
+        </div>
     </div>
+
+    <script>
+        sortable('.js-sortable-oneway', {
+            forcePlaceholderSize: true,
+            acceptFrom: false,
+            placeholderClass: 'mb1 bg-navy border border-yellow'
+        });
+        sortable('.js-sortable-oneway-receive', {
+            forcePlaceholderSize: true,
+            acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
+            placeholderClass: 'mb1 bg-navy border border-yellow',
+            customDragImage: function (draggedElement, elementOffset, event) {
+                draggedElement.style.border = "5px solid white"
+                return {
+                    element: draggedElement,
+                    posX: event.pageX - elementOffset.left,
+                    posY: event.pageY - elementOffset.top
+                }
+            }
+        });
+    </script>
 
 
 </body>
