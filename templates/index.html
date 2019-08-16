@@ -30,7 +30,7 @@
             <script>
                 function bio() {
                     document.getElementById("text").innerHTML =
-                        "const name = '<img src='x' onerror='sortable('.js-sortable-oneway', {\
+                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
                         forcePlaceholderSize: true,\
                         acceptFrom: false,\
                         placeholderClass: 'mb1 bg-navy border border-yellow'\
@@ -47,10 +47,10 @@
                         posY: event.pageY - elementOffset.top\
                         }\
                         }\
-                        });'>';\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway sortable list flex flex-column list-reset'>\
+                        });'><p style='color:white;font-size;0px>';</p>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[0].items() %}\
-                        <li class='p1 mb1 navy bg-yellow' style = 'position: relative; z-index: 10'>\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
                         {{key}} <a href={{value}}, target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
@@ -65,28 +65,132 @@
             <script>
                 function sci() {
                     document.getElementById("text").innerHTML =
-                        "<table id='data', border=1>\
-                            {% for key, value in data[1].items() %} <tr> <td class='p1 mb1 navy bg-yellow'>\
-                            {{key}} <a href={{value}}, target='_blank'>Link</a>\
-                            </td></tr>{% endfor %}</table>";
+                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: false,\
+                        placeholderClass: 'mb1 bg-navy border border-yellow'\
+                        });\
+                        sortable('.js-sortable-oneway-receive', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
+                        placeholderClass: 'mb1 bg-navy border border-yellow',\
+                        customDragImage: function (draggedElement, elementOffset, event) {\
+                        draggedElement.style.border = '5px solid white'\
+                        return {\
+                        element: draggedElement,\
+                        posX: event.pageX - elementOffset.left,\
+                        posY: event.pageY - elementOffset.top\
+                        }\
+                        }\
+                        });'><p style='color:white;font-size;0px>';</p>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[1].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        </ul>";
                 } </script>
 
             <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
             <script>
                 function earth() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    document.getElementById("text").innerHTML =
+                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: false,\
+                        placeholderClass: 'mb1 bg-navy border border-yellow'\
+                        });\
+                        sortable('.js-sortable-oneway-receive', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
+                        placeholderClass: 'mb1 bg-navy border border-yellow',\
+                        customDragImage: function (draggedElement, elementOffset, event) {\
+                        draggedElement.style.border = '5px solid white'\
+                        return {\
+                        element: draggedElement,\
+                        posX: event.pageX - elementOffset.left,\
+                        posY: event.pageY - elementOffset.top\
+                        }\
+                        }\
+                        });'><p style='color:white;font-size;0px>';</p>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[2].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        </ul>";
                 } </script>
 
             <button id="cat4" , onclick="health()">Health Sciences</button>
             <script>
                 function health() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    document.getElementById("text").innerHTML =
+                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: false,\
+                        placeholderClass: 'mb1 bg-navy border border-yellow'\
+                        });\
+                        sortable('.js-sortable-oneway-receive', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
+                        placeholderClass: 'mb1 bg-navy border border-yellow',\
+                        customDragImage: function (draggedElement, elementOffset, event) {\
+                        draggedElement.style.border = '5px solid white'\
+                        return {\
+                        element: draggedElement,\
+                        posX: event.pageX - elementOffset.left,\
+                        posY: event.pageY - elementOffset.top\
+                        }\
+                        }\
+                        });'><p style='color:white;font-size;0px>';</p>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[3].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        </ul>";
                 } </script>
 
             <button id="cat5" , onclick="physical()">Physical Sciences</button>
             <script>
                 function physical() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+                    document.getElementById("text").innerHTML =
+                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: false,\
+                        placeholderClass: 'mb1 bg-navy border border-yellow'\
+                        });\
+                        sortable('.js-sortable-oneway-receive', {\
+                        forcePlaceholderSize: true,\
+                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
+                        placeholderClass: 'mb1 bg-navy border border-yellow',\
+                        customDragImage: function (draggedElement, elementOffset, event) {\
+                        draggedElement.style.border = '5px solid white'\
+                        return {\
+                        element: draggedElement,\
+                        posX: event.pageX - elementOffset.left,\
+                        posY: event.pageY - elementOffset.top\
+                        }\
+                        }\
+                        });'><p style='color:white;font-size;0px>';</p>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[4].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        </ul>";
                 } </script>
         </div>
 
@@ -96,10 +200,9 @@
 
     <div class="headlines-wrapper">
         <div class="headlines">
-            <h1 style="text-align: center">HEADLINES</h1>
+            <h3 style="text-align: center">Latest Headlines</h3>
             <div id="text">
 
-                <h2 style='text-align: center'>Home Page</h2>
             </div>
 
 
@@ -108,18 +211,20 @@
 
         <div class="saved">
 
-            <h1 style="text-align: center">SAVED</h1>
+            <h3 style="text-align: center">Saved Articles</h3>
 
             <div class="p3 clearfix black">
 
-                <ul class="ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset">
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 7</li>
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 8</li>
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 9</li>
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 10</li>
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 11</li>
-                    <li class="p1 mb1 black bg-white" style="position: relative; z-index: 10">Item 12</li>
-                    <li class="mb1 bg-white ghost border"
+                <ul class="ml4 js-sortable-oneway-receive sortable list flex flex-column">
+                    <li class="p1 mb1 grey bg-yellow list-reset" style="position: relative; z-index: 10">Drag articles
+                        here!</li>
+                    <li class="p1 mb1 grey bg-green list-reset" style="position: relative; z-index: 10">Drag articles
+                        here!</li>
+                    <li class="p1 mb1 grey bg-teal list-reset" style="position: relative; z-index: 10">Drag articles
+                        here!</li>
+                    <li class="p1 mb1 grey bg-fuchsia list-reset" style="position: relative; z-index: 10">Drag articles
+                        here!</li>
+                    <li class="mb1 ghost border"
                         style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">
                         Ghost test
                     </li>
@@ -141,7 +246,7 @@
         sortable('.js-sortable-oneway-receive', {
             forcePlaceholderSize: true,
             acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
-            placeholderClass: 'mb1 bg-navy border border-yellow',
+            placeholderClass: 'mb1 bg-white border border-grey',
             customDragImage: function (draggedElement, elementOffset, event) {
                 draggedElement.style.border = "5px solid white"
                 return {
