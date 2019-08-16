@@ -23,4 +23,24 @@ function dragend_handler(ev) {
     // ev.target.style.border = "solid black";
     ev.dataTransfer.clearData();
 }
+function sort() {
+    sortable('.js-sortable-oneway', {
+        forcePlaceholderSize: true,
+        acceptFrom: false,
+        placeholderClass: 'mb1 bg-navy border border-yellow'
+    });
+    sortable('.js-sortable-oneway-receive', {
+        forcePlaceholderSize: true,
+        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
+        placeholderClass: 'mb1 bg-navy border border-yellow',
+        customDragImage: function (draggedElement, elementOffset, event) {
+            draggedElement.style.border = "5px solid white"
+            return {
+                element: draggedElement,
+                posX: event.pageX - elementOffset.left,
+                posY: event.pageY - elementOffset.top
+            }
+        }
+    });
+}
 
