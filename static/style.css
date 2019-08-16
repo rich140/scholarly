@@ -10,8 +10,6 @@ body {
     margin:0;
     padding:0;
     height:100%;
-
-
 }
 
 
@@ -20,8 +18,6 @@ body {
     height: 8%;
     overflow:  hidden;
     background-color: #F76C6C;
-
-
 }
 
 .logo {
@@ -90,15 +86,14 @@ body {
 .headlines-wrapper {
     height: 100%;
     width: 100%;
-    overflow: hidden;
-
+    margin-top: -20px;
 
 }
 
 .headlines {
     font-family: Arial;
     height: 100%;
-    background-color: #e7e7e7; color: black;
+    background-color: white; color: black;
     width: 800px;
     float: left;
 }
@@ -107,10 +102,7 @@ body {
     font-family: Arial;
     margin-top: -20px;
     height: 100%;
-
     margin-left: 780px;
-    margin-top: -20px;
-    background-color: #A8D0E6;
   }
 
 .empty {
