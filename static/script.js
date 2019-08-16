@@ -23,3 +23,4 @@ function dragend_handler(ev) {
     // ev.target.style.border = "solid black";
     ev.dataTransfer.clearData();
 }
+

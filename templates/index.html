@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='style.css')}}">
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
@@ -10,58 +11,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-
-
     <title>Top Secret</title>
 </head>
 
 <body>
 
 
-    <div class="sidebar-wrapper">
 
-        <div class="logo">
-            <button onclick="home()">Home</button>
-            <script>
-                function home() {
-                    document.getElementById('text').innerHTML = "Home Page";
-                }
-            </script>
-        </div>
+<div class="sidebar-wrapper">
 
-        <div class="sidebar">
-            <button id="cat1" , onclick="bio()">Biological Sciences</button>
-            <script>
-                function bio() {
-                    document.getElementById("text").innerHTML = "<ul>{% for key, value in data[0].items() %} <li ondragstart='drag(event)', class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
-                }
-            </script>
+    <div class="logo">
+        <button onclick="home()">Home</button>
+        <script>
+            function home() {
+                document.getElementById('text').innerHTML = "Home Page";
+            }
+        </script>
+    </div>
 
-            <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
-            <script>
-                function sci() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                } </script>
+    <div class="sidebar">
+        <button id="cat1" , onclick="bio()">Biological Sciences</button>
+        <script>
+            function bio() {
+                document.getElementById("text").innerHTML =
+                    "<ul>{% for key, value in data[0].items() %} <li ondragstart='drag(event)', class='fill', draggable='true'> {{key}} <a href={{value}}, target='_blank'>Link</a></li>{% endfor %}</ul>";
+            }
+        </script>
 
-            <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
-            <script>
-                function earth() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                } </script>
+        <button id="cat2" , onclick="sci()">Scientific Community and Society</button>
+        <script>
+            function sci() {
+                document.getElementById("text").innerHTML =
+                    "<table id='data', border=1>{% for key, value in data[1].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+            } </script>
 
-            <button id="cat4" , onclick="health()">Health Sciences</button>
-            <script>
-                function health() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                } </script>
+        <button id="cat3" , onclick="earth()">Earth and Environmental Sciences</button>
+        <script>
+            function earth() {
+                document.getElementById("text").innerHTML =
+                    "<table id='data', border=1>{% for key, value in data[2].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+            } </script>
 
-            <button id="cat5" , onclick="physical()">Physical Sciences</button>
-            <script>
-                function physical() {
-                    document.getElementById("text").innerHTML = "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
-                } </script>
-        </div>
+        <button id="cat4" , onclick="health()">Health Sciences</button>
+        <script>
+            function health() {
+                document.getElementById("text").innerHTML =
+                    "<table id='data', border=1>{% for key, value in data[3].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+            } </script>
 
+        <button id="cat5" , onclick="physical()">Physical Sciences</button>
+        <script>
+            function physical() {
+                document.getElementById("text").innerHTML =
+                    "<table id='data', border=1>{% for key, value in data[4].items() %} <tr> <td> {{key}} <a href={{value}}, target='_blank'>Link</a></td></tr>{% endfor %}</table>";
+            } </script>
+    </div>
 
 
     </div>
@@ -85,34 +89,37 @@
                 <div class="empty">
                     <li id='t1' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
-                        ondragover='dragover_handler(event)'>Redredredredredredredred</li>
+                        ondragover='dragover_handler(event)'>Redredredredredredredred
+                    </li>
                 </div>
                 <div class="empty">
                     <li id='t2' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
-                        ondragover='dragover_handler(event)'>YellowYellowYellow</li>
+                        ondragover='dragover_handler(event)'>YellowYellowYellow
+                    </li>
                 </div>
                 <div class="empty">
                     <li id='t3' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
-                        ondragover='dragover_handler(event)'>GreenGreenGreen</li>
+                        ondragover='dragover_handler(event)'>GreenGreenGreen
+                    </li>
                 </div>
                 <div class="empty">
                     <li id='t4' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
-                        ondragover='dragover_handler(event)'>BlueBLueBlueBLUELBULEULBULBUEBUEBE</li>
+                        ondragover='dragover_handler(event)'>BlueBLueBlueBLUELBULEULBULBUEBUEBE
+                    </li>
                 </div>
                 <div class="empty">
                     <li id='t5' draggable='true' ondragstart="dragstart_handler(event)"
                         ondragend="dragend_handler(event)" ondrop='drop_handler(event)'
-                        ondragover='dragover_handler(event)'>PURRRRRRRRPLE!</li>
+                        ondragover='dragover_handler(event)'>PURRRRRRRRPLE!
+                    </li>
                 </div>
             </ol>
 
 
-
         </div>
-
 
 
         <div class="saved">
@@ -148,10 +155,6 @@
 
         </div>
     </div>
-
-
-
-
 
 
 </body>
