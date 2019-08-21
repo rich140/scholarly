@@ -5,6 +5,7 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Cardo&display=swap" rel="stylesheet">
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="{{ url_for('static', filename='html5sortable.js') }}"></script>
@@ -25,37 +26,23 @@
 
     <div class="sidebar-wrapper">
 
+        <div class="logo">
+            <img id="logo" src="{{ url_for('static',filename='images/logo.png') }}" alt="logo">
+        </div>
+
         <div class="sidebar">
             <button id="cat1" , onclick="bio()">Biological Sciences</button>
             <script>
                 function bio() {
                     document.getElementById("text").innerHTML =
-                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: false,\
-                        placeholderClass: 'mb1 bg-navy border border-yellow'\
-                        });\
-                        sortable('.js-sortable-oneway-receive', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
-                        placeholderClass: 'mb1 bg-navy border border-yellow',\
-                        customDragImage: function (draggedElement, elementOffset, event) {\
-                        draggedElement.style.border = '5px solid white'\
-                        return {\
-                        element: draggedElement,\
-                        posX: event.pageX - elementOffset.left,\
-                        posY: event.pageY - elementOffset.top\
-                        }\
-                        }\
-                        });'><p style='color:white;font-size;0px>';</p>\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[0].items() %}\
                         <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
-                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
                         <li class='mb1 bg-navy ghost border border-yellow'\
-                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 }
 
@@ -65,32 +52,14 @@
             <script>
                 function sci() {
                     document.getElementById("text").innerHTML =
-                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: false,\
-                        placeholderClass: 'mb1 bg-navy border border-yellow'\
-                        });\
-                        sortable('.js-sortable-oneway-receive', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
-                        placeholderClass: 'mb1 bg-navy border border-yellow',\
-                        customDragImage: function (draggedElement, elementOffset, event) {\
-                        draggedElement.style.border = '5px solid white'\
-                        return {\
-                        element: draggedElement,\
-                        posX: event.pageX - elementOffset.left,\
-                        posY: event.pageY - elementOffset.top\
-                        }\
-                        }\
-                        });'><p style='color:white;font-size;0px>';</p>\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[1].items() %}\
                         <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
-                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
                         <li class='mb1 bg-navy ghost border border-yellow'\
-                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 } </script>
 
@@ -98,32 +67,14 @@
             <script>
                 function earth() {
                     document.getElementById("text").innerHTML =
-                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: false,\
-                        placeholderClass: 'mb1 bg-navy border border-yellow'\
-                        });\
-                        sortable('.js-sortable-oneway-receive', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
-                        placeholderClass: 'mb1 bg-navy border border-yellow',\
-                        customDragImage: function (draggedElement, elementOffset, event) {\
-                        draggedElement.style.border = '5px solid white'\
-                        return {\
-                        element: draggedElement,\
-                        posX: event.pageX - elementOffset.left,\
-                        posY: event.pageY - elementOffset.top\
-                        }\
-                        }\
-                        });'><p style='color:white;font-size;0px>';</p>\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[2].items() %}\
                         <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
-                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
                         <li class='mb1 bg-navy ghost border border-yellow'\
-                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 } </script>
 
@@ -131,32 +82,14 @@
             <script>
                 function health() {
                     document.getElementById("text").innerHTML =
-                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: false,\
-                        placeholderClass: 'mb1 bg-navy border border-yellow'\
-                        });\
-                        sortable('.js-sortable-oneway-receive', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
-                        placeholderClass: 'mb1 bg-navy border border-yellow',\
-                        customDragImage: function (draggedElement, elementOffset, event) {\
-                        draggedElement.style.border = '5px solid white'\
-                        return {\
-                        element: draggedElement,\
-                        posX: event.pageX - elementOffset.left,\
-                        posY: event.pageY - elementOffset.top\
-                        }\
-                        }\
-                        });'><p style='color:white;font-size;0px>';</p>\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[3].items() %}\
                         <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
-                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
                         <li class='mb1 bg-navy ghost border border-yellow'\
-                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 } </script>
 
@@ -164,34 +97,33 @@
             <script>
                 function physical() {
                     document.getElementById("text").innerHTML =
-                        "<p style='color:white; font-size: 0px;'>const name = '</p><img src='x' onerror=this.style.display='none' 'sortable('.js-sortable-oneway', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: false,\
-                        placeholderClass: 'mb1 bg-navy border border-yellow'\
-                        });\
-                        sortable('.js-sortable-oneway-receive', {\
-                        forcePlaceholderSize: true,\
-                        acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',\
-                        placeholderClass: 'mb1 bg-navy border border-yellow',\
-                        customDragImage: function (draggedElement, elementOffset, event) {\
-                        draggedElement.style.border = '5px solid white'\
-                        return {\
-                        element: draggedElement,\
-                        posX: event.pageX - elementOffset.left,\
-                        posY: event.pageY - elementOffset.top\
-                        }\
-                        }\
-                        });'><p style='color:white;font-size;0px>';</p>\
-                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
                         {% for key, value in data[4].items() %}\
                         <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
-                        {{key}} <a href={{value}}, target='_blank'>Link</a>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
                         <li class='mb1 bg-navy ghost border border-yellow'\
-                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'>Ghost test</li>\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 } </script>
+
+            <button id="cat6" , onclick="h_o()">Hematology/Oncology</button>
+            <script>
+                function h_o() {
+                    document.getElementById("text").innerHTML =
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in nejm[0].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
+                        </ul>";
+                }
+
+            </script>
         </div>
 
 
@@ -202,7 +134,8 @@
         <div class="headlines">
             <h3 style="text-align: center">Latest Headlines</h3>
             <div id="text">
-
+                <p>For scholars | By Scholars: Scholar.ly created by Richard Wang and Kevin Zheng</p>
+                <p>Here at Scholar.ly we strive to provide only the highest quality web scraping services.</p>
             </div>
 
 
@@ -215,7 +148,7 @@
 
             <div class="p3 clearfix black">
 
-                <ul class="ml4 js-sortable-oneway-receive sortable list flex flex-column">
+                <ul class="js-sortable-oneway-receive sortable list list-reset flex flex-column">
                     <li class="p1 mb1 grey bg-yellow list-reset" style="position: relative; z-index: 10">Drag articles
                         here!</li>
                     <li class="p1 mb1 grey bg-green list-reset" style="position: relative; z-index: 10">Drag articles
@@ -226,7 +159,6 @@
                         here!</li>
                     <li class="mb1 ghost border"
                         style="position: relative; z-index: 1; margin-top: -49px; height: 40px; display: block;">
-                        Ghost test
                     </li>
                 </ul>
 
@@ -248,7 +180,7 @@
             acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
             placeholderClass: 'mb1 bg-white border border-grey',
             customDragImage: function (draggedElement, elementOffset, event) {
-                draggedElement.style.border = "5px solid white"
+                draggedElement.style.border = "1px solid grey"
                 return {
                     element: draggedElement,
                     posX: event.pageX - elementOffset.left,

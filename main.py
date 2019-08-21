@@ -24,7 +24,7 @@ def removeNoText(lst):
     return arr
 
 
-def filter(soup):
+def filter_nature(soup):
     a_tags = soup.findAll('a')
     all_articles = removeNoText(a_tags)
     result = {}
@@ -38,45 +38,49 @@ def filter(soup):
     return result
 
 
-def extract():
+def extract_nature():
     result = []
     for url in nature_urls:
         response = requests.get(url)
         soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter(soup))
+        result.append(filter_nature(soup))
     return result
 
 
-response = requests.get(nejm_urls[0])
-soup = BeautifulSoup(response.text, "html.parser")
-strong_tags = soup.findAll('strong')
-print(len(strong_tags))
-# print(soup)
-# for tag in strong_tags:
-#     print(tag.getText())
-#     print(len(tag.getText()))
-#     print("------------------------------------------------------")
+# response = requests.get(nejm_urls[0])
+# soup = BeautifulSoup(response.text, "html.parser")
+# a_tags = soup.findAll('a')
+# print(len(a_tags))
+# for tag in a_tags:
+#     if (tag.find('strong')):
+#         strong_tags =
+#         print(tag.getText())
+#         print(len(tag.getText()))
+#         print("------------------------------------------------------")
 
 
-def filterNejm(soup):
+def filter_nejm(soup):
     strong_tags = soup.findAll('strong')
     result = {}
     for i in range(30, len(strong_tags)):
         if(strong_tags[i].getText().startswith("\n") == False):
-            result.append(strong_tags[i].getText())
+            result[strong_tags[i].getText()] = "http://www.nejm.org" + \
+                strong_tags[i].parent.parent['href'].rstrip(',')
     return result
 
 
-def extractNejm():
+def extract_nejm():
     result = []
     for url in nejm_urls:
         response = requests.get(url)
         soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter(soup))
+        result.append(filter_nejm(soup))
     return result
 
 
-# print(filterNejm(soup))
+# for thing in extract_nejm():
+#     print(thing)
+#     print("\n")
 
 
 # TO PRINT:
@@ -84,10 +88,11 @@ def extractNejm():
 #     print(key, "=>", val)
 
 
-# @app.route('/')
-# def info():
-#     return render_template('index.html', author="Me", data=extract())
+# RUN SERVER
+@app.route('/')
+def info():
+    return render_template('index.html', author="Me", data=extract_nature(), nejm=extract_nejm())
 
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()

@@ -34,7 +34,7 @@ function sort() {
         acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
         placeholderClass: 'mb1 bg-navy border border-yellow',
         customDragImage: function (draggedElement, elementOffset, event) {
-            draggedElement.style.border = "5px solid white"
+            draggedElement.style.border = "1px solid grey"
             return {
                 element: draggedElement,
                 posX: event.pageX - elementOffset.left,
