@@ -58,10 +58,81 @@ body {
     display: flex;
 }
 
+.sources {
+  flex: 0 0 20%;
+  height: 100%;
+}
+
+#source1, #source2, #source3, #source4 {
+  text-align: center;
+  height: 68px;
+}
+
+
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 50px solid white;
+  border-bottom: 25px solid transparent;
+  background-color: green;
+  margin-right: 50px;
+  margin-top: -20px;
+}
+
+
+.btn-liquid {
+	display: inline-block;
+	position: relative;
+	width: 120px;
+  height: 40px;
+  
+  margin-top: 60px;
+  margin-left: 27%;
+
+	border-radius: 27px;
+	color: white;
+  /* font: 700 14px/60px "Droid Sans", sans-serif; */
+  /* font: 700 14px/60px "Cardo"; */
+  font-family: Cardo;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-decoration: none;
+	/* text-transform: uppercase; */
+}
+
+.btn-liquid .inner {
+	position: relative;
+
+	z-index: 2;
+}
+
+.btn-liquid canvas {
+	position: absolute;
+	top: -58px;
+	right: -50px;
+	bottom: -50px;
+	left: -50px;
+
+	z-index: 1;
+}
+
+ul,li {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+
+
 .headlines {
     font-family: Cardo, serif;
     height: 100%;
-    flex: 0 0 60%;
+    flex: 0 0 55%;
+}
+
+.homeinfo {
+  text-align: center;
 }
 
 .saved{
@@ -708,9 +779,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 pre, code {
   background-color: transparent;

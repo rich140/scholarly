@@ -9,14 +9,15 @@
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="{{ url_for('static', filename='html5sortable.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 
 
-    <title>Top Secret</title>
+    <title>Scholar.ly</title>
 </head>
 
 <body>
@@ -27,7 +28,17 @@
     <div class="sidebar-wrapper">
 
         <div class="logo">
-            <img id="logo" src="{{ url_for('static',filename='images/logo.png') }}" alt="logo">
+            <script>
+                function home() {
+                    document.getElementById("text").innerHTML =
+                        "<div class='homeinfo'> \
+                            <h1 style='text-align: center; font-family: Cardo'>Welcome to Scholarly</h1> \
+                            <h2 style='font-family: Cardo'>Our mission</h2> \
+                            <p>At Scholarly, we aim to provide simple and easy access to leading scientific journals around the world. Here readers can stay up to date on the latest scientific articles and discoveries. Scholar.ly acts as a hub for all your scholarly pursuits - everything is in one place!  We believed a simple, clean, and intuitive user interface was crucial to the quality of our service. Scholarly uses the latest web-scraping software to deliver accurate and high quality results in just mere seconds. </p> \
+                        </div>";
+                }
+            </script>
+            <img id="logo" src="{{ url_for('static',filename='images/logo.png') }}" alt="logo" onclick="home()">
         </div>
 
         <div class="sidebar">
@@ -131,11 +142,126 @@
     </div>
 
     <div class="headlines-wrapper">
+        <div class="sources">
+            <script>
+                function natCom() {
+                    document.getElementById('source1').style = "background-color: #ededed; border: 1px solid black; border-radius: 10px;";
+                    document.getElementById('source2').style = "background-color: white;";
+                    document.getElementById('source3').style = "background-color: white;";
+                    document.getElementById('source4').style = "background-color: white;";
+                    document.getElementById("text").innerHTML =
+                        "<h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>\
+                        <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[0].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px; cursor: pointer;'>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
+                        </ul>";
+                }
+                function plos() {
+                    document.getElementById('source2').style = "background-color: #ededed; border: 1px solid black; border-radius: 10px;";
+                    document.getElementById('source1').style = "background-color: white;";
+                    document.getElementById('source3').style = "background-color: white;";
+                    document.getElementById('source4').style = "background-color: white;";
+                    document.getElementById("text").innerHTML =
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[1].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
+                        </ul>";
+                }
+                function sciReports() {
+                    document.getElementById('source3').style = "background-color: #ededed; border: 1px solid black; border-radius: 10px;";
+                    document.getElementById('source1').style = "background-color: white;";
+                    document.getElementById('source2').style = "background-color: white;";
+                    document.getElementById('source4').style = "background-color: white;";
+                    document.getElementById("text").innerHTML =
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[2].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
+                        </ul>";
+                }
+                function sciAdv() {
+                    document.getElementById('source4').style = "background-color: #ededed; border: 1px solid black; border-radius: 10px;";
+                    document.getElementById('source1').style = "background-color: white;";
+                    document.getElementById('source2').style = "background-color: white;";
+                    document.getElementById('source3').style = "background-color: white;";
+                    document.getElementById("text").innerHTML =
+                        "<ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
+                        {% for key, value in data[3].items() %}\
+                        <li class='p1 mb1 navy bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {{key}} <a href={{value}} target='_blank'>Link</a>\
+                        </li>\
+                        {% endfor %}\
+                        <li class='mb1 bg-navy ghost border border-yellow'\
+                        style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
+                        </ul>";
+                }
+            </script>
+            <h1 style="text-align: center; font-family: 'Cardo';">Sources</h1>
+            <ul style="list-style: none; padding-left: none;font-family: Cardo;">
+                <script>
+                    function removeTriangle() {
+                        document.getElementById('source1').innerHTML =
+                            "<a onmouseover='showTriangle()' onmouseout='removeTriangle()' onclick='natCom()' style='cursor: pointer;  position: relative;\
+                                            top: 12px;'><img src='{{ url_for('static',filename='images/nature_communications.jpg') }}'\
+                                                    alt='Nature Communications' height='40' width='98.2'></a>"
+                    }
+
+                    function showTriangle() {
+                        document.getElementById('source1').innerHTML =
+                            "&#9654 <a onmouseover='showTriangle()' onmouseout='removeTriangle()' onclick='natCom()' style='cursor: pointer;  position: relative;\
+                                top: 12px;'><img src='{{ url_for('static',filename='images/nature_communications.jpg') }}'\
+                                        alt='Nature Communications' height='40' width='98.2'></a>"
+                    }
+                </script>
+
+                <li id='source1'>
+                    <a onclick="natCom()" style="cursor: pointer;  position: relative;
+                    top: 12px;"><img src="{{ url_for('static',filename='images/nature_communications.jpg') }}"
+                            alt="Nature Communications" height='40' width='98.2'></a></li>
+                <li id='source2'>
+                    <a onclick="plos()" style="cursor: pointer; position: relative;
+                    top: 12px;"><img src="{{ url_for('static',filename='images/plos.png') }}" alt="PLOS One"
+                            height='40' width='128'></a>
+                </li>
+                <li id='source3'>
+                    <a onclick="sciReports()" style="cursor: pointer;  position: relative;
+                    top: 12px;"><img src="{{ url_for('static',filename='images/scientific_reports.jpg') }}"
+                            alt="Scientific Reports" height='40' width='79'> </a>
+                </li>
+                <li id='source4'><a onclick="sciAdv()" style="cursor: pointer;  position: relative;
+                    top: 12px;"><img src="{{ url_for('static',filename='images/science_advances.jpeg') }}"
+                            alt="Science Advances" height='40' width='79'> </a></li>
+                <li></li>
+                <li></li>
+                <a href="" class="btn-liquid">
+                    <span class="inner">Customize</span>
+                </a>
+
+            </ul>
+
+        </div>
         <div class="headlines">
-            <h3 style="text-align: center">Latest Headlines</h3>
             <div id="text">
-                <p>For scholars | By Scholars: Scholar.ly created by Richard Wang and Kevin Zheng</p>
-                <p>Here at Scholar.ly we strive to provide only the highest quality web scraping services.</p>
+                <div class="homeinfo">
+                    <h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>
+                    <p>For scholars | By Scholars: Scholar.ly created by Richard Wang and Kevin Zheng</p>
+                    <p>Here at Scholar.ly we strive to provide only the highest quality web scraping services.</p>
+
+                </div>
             </div>
 
 
@@ -144,7 +270,7 @@
 
         <div class="saved">
 
-            <h3 style="text-align: center">Saved Articles</h3>
+            <h1 style="text-align: center; font-family: 'Cardo';">Saved Articles</h1>
 
             <div class="p3 clearfix black">
 

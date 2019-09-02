@@ -41,9 +41,11 @@ def filter_nature(soup):
 def extract_nature():
     result = []
     for url in nature_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_nature(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_nature(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 
@@ -72,9 +74,11 @@ def filter_nejm(soup):
 def extract_nejm():
     result = []
     for url in nejm_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_nejm(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_nejm(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 
