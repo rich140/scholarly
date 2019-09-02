@@ -31,11 +31,17 @@
             <script>
                 function home() {
                     document.getElementById("text").innerHTML =
-                        "<div class='homeinfo'> \
-                            <h1 style='text-align: center; font-family: Cardo'>Welcome to Scholarly</h1> \
-                            <h2 style='font-family: Cardo'>Our mission</h2> \
-                            <p>At Scholarly, we aim to provide simple and easy access to leading scientific journals around the world. Here readers can stay up to date on the latest scientific articles and discoveries. Scholar.ly acts as a hub for all your scholarly pursuits - everything is in one place!  We believed a simple, clean, and intuitive user interface was crucial to the quality of our service. Scholarly uses the latest web-scraping software to deliver accurate and high quality results in just mere seconds. </p> \
-                        </div>";
+                        "<div class='homeinfo'>\
+                        <h1 style='text-align: center; font-family: Cardo'>Welcome to Scholarly</h1>\
+                        <h2 style='font-family: Cardo;'>Our mission</h2>\
+                        <p id='mission'>At Scholarly, we aim to provide simple and easy access to leading scientific\
+                            journals around\
+                            the world. Here readers can stay up to date on the latest scientific articles and\
+                            discoveries. Scholar.ly acts as a hub for all your scholarly pursuits. We believed a simple,\
+                            clean, and intuitive user interface was crucial to the quality\
+                            of our service. Scholarly uses the latest web-scraping software to deliver accurate and high\
+                            quality results. </p>\
+                    </div>"
                 }
             </script>
             <img id="logo" src="{{ url_for('static',filename='images/logo.png') }}" alt="logo" onclick="home()">
@@ -177,12 +183,12 @@
                     document.getElementById("text").innerHTML =
                         "<h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>\
                         <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
-                        {% for key, value in data[0].items() %}\
+                        {% for key, value in ncom[0].items() %}\
                         <li class='p1 mb1 bg-white' style='position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px; cursor: pointer;'>\
                         {{ key }} <a href={{ value }} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
-                        <li class='mb1 ghost border'\
+                        <li class='mb1 ghost'\
                                 style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 }
@@ -194,12 +200,12 @@
                     document.getElementById("text").innerHTML =
                         "<h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>\
                         <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
-                        {% for key, value in data[1].items() %}\
-                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {% for key, value in plos[0].items() %}\
+                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px; cursor: pointer;'>\
                         {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
-                        <li class='mb1 ghost border'\
+                        <li class='mb1 ghost'\
                         style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 }
@@ -211,12 +217,12 @@
                     document.getElementById("text").innerHTML =
                         "<h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>\
                         <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
-                        {% for key, value in data[2].items() %}\
-                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {% for key, value in scireports[0].items() %}\
+                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px; cursor: pointer;'>\
                         {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
-                        <li class='mb1 ghost border'\
+                        <li class='mb1 ghost'\
                         style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 }
@@ -228,12 +234,12 @@
                     document.getElementById("text").innerHTML =
                         "<h1 style='text-align: center; font-family: Cardo;'>Headlines</h1>\
                         <ul onclick='sort()' class='ml4 js-sortable-oneway-receive sortable list flex flex-column list-reset'>\
-                        {% for key, value in data[3].items() %}\
-                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px;'>\
+                        {% for key, value in sciadv[0].items() %}\
+                        <li class='p1 mb1 bg-white' style = 'position: relative; z-index: 10; border: 1px solid grey; border-radius: 3px; cursor: pointer;'>\
                         {{key}} <a href={{value}} target='_blank'>Link</a>\
                         </li>\
                         {% endfor %}\
-                        <li class='mb1 ghost border'\
+                        <li class='mb1 ghost'\
                         style='position: relative; z - index: 1; margin - top: -49px; height: 40px; display: block;'></li>\
                         </ul>";
                 }
@@ -314,12 +320,12 @@
 
     </div>
 
-
+    <!-- This code dictates behavior of highlighters-->
     <script>
         sortable('.js-sortable-oneway', {
             forcePlaceholderSize: true,
             acceptFrom: false,
-            placeholderClass: 'mb1 bg-navy border border-yellow'
+            placeholderClass: 'mb1 border'
         });
         sortable('.js-sortable-oneway-receive', {
             forcePlaceholderSize: true,

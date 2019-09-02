@@ -27,12 +27,12 @@ function sort() {
     sortable('.js-sortable-oneway', {
         forcePlaceholderSize: true,
         acceptFrom: false,
-        placeholderClass: 'mb1 bg-navy border border-yellow'
+        placeholderClass: 'mb1 border'
     });
     sortable('.js-sortable-oneway-receive', {
         forcePlaceholderSize: true,
         acceptFrom: '.js-sortable-oneway,.js-sortable-oneway-receive',
-        placeholderClass: 'mb1 bg-navy border border-yellow',
+        placeholderClass: 'mb1 border',
         customDragImage: function (draggedElement, elementOffset, event) {
             draggedElement.style.border = "1px solid grey"
             return {
