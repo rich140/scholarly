@@ -23,7 +23,7 @@ body {
     flex: 0 0 1;
     width: 90px;
     height: 90px;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 
@@ -40,7 +40,7 @@ body {
     padding: 10px 24px;
 }
 
-#cat1, #cat2, #cat3, #cat4, #cat5, #cat6 {
+#cat1, #cat2, #cat3, #cat4, #cat5, #cat6, #about, #contact {
      font-family: Cardo, serif;
      background-color: white;
      border: 1px solid grey;
@@ -49,6 +49,10 @@ body {
      font-size: 14px;
      padding: 5px 12px;
      margin-top: 20px;
+}
+
+#about {
+  margin-left: 33%;
 }
 
 
@@ -61,6 +65,7 @@ body {
 .sources {
   flex: 0 0 20%;
   height: 100%;
+  border-right: 1px solid rgb(199, 199, 199);
 }
 
 #source1, #source2, #source3, #source4 {
@@ -131,6 +136,14 @@ ul,li {
     flex: 0 0 55%;
 }
 
+#mission {
+  /* background-color: rgb(199, 199, 199);
+  border: 1px solid grey; */
+  /* border-radius: 5px; */
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 .homeinfo {
   text-align: center;
 }
@@ -139,6 +152,7 @@ ul,li {
     font-family: Cardo, serif;
     height: 100%;
     flex: 1;
+    /* border-left: 1px solid rgb(199, 199, 199); */
   }
 
 .empty {
@@ -149,6 +163,36 @@ ul,li {
   margin-right: 10px;
   /* border: solid 1px black;
   background: white; */
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f3f2f2;
+  padding: 20px;
 }
 
 /*
