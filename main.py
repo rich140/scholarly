@@ -104,9 +104,11 @@ def filter_ncom(soup):
 def extract_ncom():
     result = []
     for url in ncom_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_ncom(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_ncom(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 
@@ -123,9 +125,11 @@ def filter_plos(soup):
 def extract_plos():
     result = []
     for url in plos_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_plos(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_plos(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 
@@ -142,9 +146,11 @@ def filter_scireports(soup):
 def extract_scireports():
     result = []
     for url in scireports_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_scireports(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_scireports(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 
@@ -161,9 +167,11 @@ def filter_sciadv(soup):
 def extract_sciadv():
     result = []
     for url in sciadv_urls:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        result.append(filter_sciadv(soup))
+        # response = requests.get(url)
+        # soup = BeautifulSoup(response.text, "html.parser")
+        # result.append(filter_sciadv(soup))
+        dict = {}
+        result.append(dict)
     return result
 
 

@@ -245,7 +245,7 @@
                 }
             </script>
             <h1 style="text-align: center; font-family: 'Cardo';">Sources</h1>
-            <ul style="list-style: none; padding-left: none;font-family: Cardo;">
+            <ul id='dynamic-list' style="list-style: none; padding-left: none;font-family: Cardo;">
                 <li id='source1'>
                     <a onclick="natCom()" style="cursor: pointer;  position: relative;
                     top: 12px;"><img src="{{ url_for('static',filename='images/nature_communications.jpg') }}"
@@ -265,11 +265,61 @@
                             alt="Science Advances" height='40' width='79'> </a></li>
                 <li></li>
                 <li></li>
-                <a href="" class="btn-liquid">
-                    <span class="inner">Customize</span>
-                </a>
-
             </ul>
+            <a class="btn-liquid">
+                <span class="inner" id="myBtn">Customize</span>
+            </a>
+
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Choose the following sources you would like to see content from</p>
+                    <form action="/customize.php">
+                        Nature Commucations: <input type="checkbox" name="ncominput" value="true">
+                        <br>
+                        PLOS One: <input type="checkbox" name="plosinput" value="true">
+                        <br>
+                        Scientific Reports: <input type="checkbox" name="scirepinput" value="true">
+                        <br>
+                        Science Advances: <input type="checkbox" name="sciadvinput" value="true">
+                        <br>
+                        <br>
+                        <input type="submit">
+                    </form>
+                </div>
+
+            </div>
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
 
         </div>
         <div class="headlines">
@@ -319,6 +369,53 @@
 
 
     </div>
+
+
+    <h2>Modal Example</h2>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
 
     <!-- This code dictates behavior of highlighters-->
     <script>
